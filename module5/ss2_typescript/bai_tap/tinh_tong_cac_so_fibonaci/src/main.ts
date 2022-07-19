@@ -15,12 +15,14 @@ function fibonaci(fibonaci: number): number {
     }
     return next;
 }
-function Sum(sumFibonaci: number): number {
+function sum(sumFibonaci: string | null): number {
     var sum = 0;
+    // @ts-ignore
     for (let i=0; i<sumFibonaci; i++){
         sum +=fibonaci(i);
     }
     return sum;
 }
-var stt: number = prompt("Nhập số lượng số Fibonaci cần tính tổng: ");
-console.log("Tổng các số fibonaci là: " + Sum(stt));
+
+const stt: string | null = prompt("Nhập số lượng số Fibonaci cần tính tổng: ");
+console.log("Tổng các số fibonaci là: " + sum(stt));
