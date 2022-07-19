@@ -1,0 +1,16 @@
+<!--Danh sách màu: <br>-->
+<!--<div *ngFor="let color of colors">-->
+<!--  <li>{{color}}</li>-->
+<!--</div>-->
+<!--<div>-->
+<!--  <select>-->
+<!--    <option *ngFor="let color of colors">-->
+<!--      {{color}}-->
+<!--    </option>-->
+<!--  </select>-->
+<!--</div>-->
+<!--<input type="range">-->
+<!--<input type="range">-->
+<!--<input type="range">-->
+<input type="color" (input)="setColor($event.target.value)">
+result: {{color}}

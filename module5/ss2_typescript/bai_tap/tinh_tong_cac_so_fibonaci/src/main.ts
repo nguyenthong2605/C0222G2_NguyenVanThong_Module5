@@ -1,6 +1,6 @@
 import defineProperty = Reflect.defineProperty;
 
-function Fibonaci(fibonaci: number): number {
+function fibonaci(fibonaci: number): number {
     var a = 0;
     var b = 1;
     var next = 0;
@@ -18,7 +18,7 @@ function Fibonaci(fibonaci: number): number {
 function Sum(sumFibonaci: number): number {
     var sum = 0;
     for (let i=0; i<sumFibonaci; i++){
-        sum +=Fibonaci(i);
+        sum +=fibonaci(i);
     }
     return sum;
 }

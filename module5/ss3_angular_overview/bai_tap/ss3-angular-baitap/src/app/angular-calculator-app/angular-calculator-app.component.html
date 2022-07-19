@@ -1,0 +1,21 @@
+<h2>Calculator</h2>
+<div>
+  <div>
+    <h3>Số hạng đầu</h3>
+    <input [(ngModel)]="numberOne">
+  </div>
+  <div>
+    <h3>Số hạng sau</h3>
+    <input [(ngModel)]="numberTwo">
+  </div>
+  <div>
+    <button (click)="sum()">+</button>
+    <button (click)="subtraction()">-</button>
+    <button (click)="multiplication()">*</button>
+    <button (click)="division()">/</button>
+  </div>
+  <h3>Kết quả</h3>
+  <input readonly value="{{result}}">
+
+
+</div>
