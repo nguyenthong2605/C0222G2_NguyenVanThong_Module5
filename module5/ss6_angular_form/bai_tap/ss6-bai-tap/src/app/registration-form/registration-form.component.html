@@ -1,0 +1,146 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form [formGroup]="registrationForm" (ngSubmit)="createRegistrationForm()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input formControlName="email" name="email" type="text" id="email"
+                           class="form-control form-control-lg"/>
+                    <p style="color: red"
+                       *ngIf="registrationForm.controls.email.hasError('required') && registrationForm.controls.email.touched">
+                      Email không được để trống</p>
+                    <p style="color: red"
+                       *ngIf="registrationForm.controls.email.hasError('email') && registrationForm.controls.email.touched">
+                      Email phải có dạng "abc@gmail.com</p>
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input formControlName="age" name="age" type="text" id="age" class="form-control form-control-lg"/>
+                    <p style="color: red"
+                       *ngIf="registrationForm.controls.age.hasError('required') && registrationForm.controls.age.touched">
+                      Tuổi không được để trống</p>
+                    <p style="color: red"
+                       *ngIf="registrationForm.controls.age.hasError('min') && registrationForm.controls.age.touched">
+                      Tuổi phải lớn hơn 18</p>
+                    <label class="form-label" for="age">Age</label>
+                  </div>
+
+                </div>
+              </div>
+              <div formGroupName="passwordGroup">
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                    <div class="form-outline datepicker w-100">
+                      <input formControlName="password" name="password" type="text" class="form-control form-control-lg"
+                             id="password"/>
+                      <p style="color: red"
+                         *ngIf="registrationForm.controls.passwordGroup.get('password').hasError('required') && registrationForm.controls.passwordGroup.get('password').touched">
+                        Mật khẩu không được để trống</p>
+                      <p style="color: red"
+                         *ngIf="registrationForm.controls.passwordGroup.get('password').hasError('minlength') && registrationForm.controls.passwordGroup.get('password').touched">
+                        Mật khẩu nhiều hơn 6 kí tự</p>
+                      <label for="password" class="form-label">Password</label>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 mb-4">
+
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+
+                    <div class="form-check form-check-inline">
+                      <input formControlName="gender" class="form-check-input" type="radio" name="inlineRadioOptions"
+                             id="femaleGender"
+                             value="option1"/>
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input formControlName="gender" class="form-check-input" type="radio" name="inlineRadioOptions"
+                             id="maleGender"
+                             value="option2"/>
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input formControlName="gender" class="form-check-input" type="radio" name="inlineRadioOptions"
+                             id="otherGender"
+                             value="option3"/>
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+                    <p style="color: red"
+                       *ngIf="registrationForm.controls.gender.hasError('required') && registrationForm.controls.gender.touched">
+                      Không được để trống</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+
+                    <div class="form-outline">
+                      <input formControlName="confirmPassword" name="confirmPassword" type="text" id="confirmPassword"
+                             class="form-control form-control-lg"/>
+                      <p style="color: red"
+                         *ngIf="registrationForm.controls.passwordGroup.get('confirmPassword').hasError('invalid0') && registrationForm.controls.passwordGroup.get('confirmPassword').touched">
+                        Mật khẩu không trùng</p>
+                      <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 pb-2">
+
+                <div class="form-outline">
+                  <input formControlName="phone" name="phone" type="tel" id="phoneNumber"
+                         class="form-control form-control-lg"/>
+                  <p style="color: red"
+                     *ngIf="registrationForm.controls.phone.hasError('required') && registrationForm.controls.phone.touched">
+                    Số điện thoại không được để trống</p>
+                  <p style="color: red"
+                     *ngIf="registrationForm.controls.phone.hasError('pattern') && registrationForm.controls.phone.touched">
+                    Bắt đầu với +84, và theo sau là 9 đến 10 chữ số. </p>
+                  <label class="form-label" for="phoneNumber">Phone</label>
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-12">
+
+                  <select formControlName="country" name="country" class="select form-control-lg" id="select">
+                    <option value="">choose</option>
+                    <option value="1">Mỹ</option>
+                    <option value="2">Việt Nam</option>
+                    <option value="3">Lào</option>
+                    <option value="4">Cambodia</option>
+                  </select>
+                  <p style="color: red"
+                     *ngIf="registrationForm.controls.country.hasError('required') && registrationForm.controls.country.touched">
+                    Quốc Gia không được để trống</p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <!--                <button class="btn btn-primary btn-lg" type="submit"></button>-->
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
