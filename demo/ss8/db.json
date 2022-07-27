@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "HaiTT",
+      "dateOfBirth": "1998-01-01",
+      "point": 7
+    },
+    {
+      "id": 2,
+      "name": "TrungDP",
+      "dateOfBirth": "1985-01-01",
+      "point": 9
+    },
+    {
+      "id": 3,
+      "name": "TienNVT",
+      "dateOfBirth": "1993-01-01",
+      "point": 8
+    },
+    {
+      "id": 4,
+      "name": "TrungDC",
+      "dateOfBirth": "2022-07-05",
+      "point": 9
+    },
+    {
+      "id": 5,
+      "name": "QuangNN",
+      "dateOfBirth": "2022-06-29",
+      "point": 98
+    },
+    {
+      "id": 6,
+      "name": "ChanhTV",
+      "dateOfBirth": "2022-06-28",
+      "point": 98
+    }
+  ],
+  "classroom": [
+    {
+      "id": 1,
+      "nameClass": "C0222G2"
+    }
+  ]
+}

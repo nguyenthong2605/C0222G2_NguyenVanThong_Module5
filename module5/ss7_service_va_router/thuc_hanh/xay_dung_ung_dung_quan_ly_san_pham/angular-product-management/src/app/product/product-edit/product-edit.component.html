@@ -1,5 +1,5 @@
 <h1>Cập nhật sản phẩm</h1>
-<form [formGroup]="productForm" (ngSubmit)="edit()">
+<form *ngIf="productForm" [formGroup]="productForm" (ngSubmit)="edit()">
   <table>
     <tr>
       <td>Mã sản phẩm:</td>

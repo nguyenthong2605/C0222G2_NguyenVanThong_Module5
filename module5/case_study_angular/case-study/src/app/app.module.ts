@@ -13,6 +13,9 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
 import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
 import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { CustomerDeleteComponent } from './customer/customer-delete/customer-delete.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,13 @@ import { ContractListComponent } from './contract/contract-list/contract-list.co
     CustomerEditComponent,
     CustomerCreateComponent,
     ContractCreateComponent,
-    ContractListComponent
+    ContractListComponent,
+    CustomerDeleteComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

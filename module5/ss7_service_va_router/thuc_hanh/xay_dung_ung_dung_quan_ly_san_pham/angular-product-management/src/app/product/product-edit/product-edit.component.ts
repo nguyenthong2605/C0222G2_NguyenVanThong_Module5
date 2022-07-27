@@ -12,18 +12,21 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class ProductEditComponent implements OnInit {
   productForm: FormGroup;
   id: number;
-  p: Product;
+  product: Product;
 
   constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService, private router: Router) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      this.p = this.productService.findById(this.id);
-      this.productForm = new FormGroup({
-        id: new FormControl(this.p.id),
-        name: new FormControl(this.p.name),
-        price: new FormControl(this.p.price),
-        description: new FormControl(this.p.description),
+      console.log(this.id);
+      this.productService.findById(this.id).subscribe(data => {
+        this.product = data;
+        this.productForm = new FormGroup({
+          id: new FormControl(this.product.id),
+          name: new FormControl(this.product.name),
+          price: new FormControl(this.product.price),
+          description: new FormControl(this.product.description),
+        });
       });
     }, error => {
 
@@ -34,10 +37,14 @@ export class ProductEditComponent implements OnInit {
   }
 
   edit() {
-    const p = this.productForm.value;
+    const product = this.productForm.value;
     this.productForm.reset();
-    console.log(p);
-    this.productService.editProduct(this.id, p);
-    this.router.navigateByUrl('/list');
+    console.log(product);
+    this.productService.editProduct(this.id, product).subscribe(data => {
+      }, error => {
+      },
+      () => {
+        this.router.navigateByUrl('product/list');
+      });
   }
 }

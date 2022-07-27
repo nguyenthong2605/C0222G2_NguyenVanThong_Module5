@@ -34,10 +34,10 @@
       <div class="table-title">
         <div class="row">
           <div class="col-xs-6">
-            <h1>Customer <b>Details</b></h1>
+            <h1>Customer <b>List</b></h1>
           </div>
           <div class="col-xs-6">
-            <a style="margin-left: 800px" href="#addEmployeeModal" class="btn btn-success btn-rounded" data-toggle="modal"><i style="font-size: 20px" class="fas fa-plus-circle"></i></a>
+            <a [routerLink]="['/customer/create']" style="margin-left: 800px" href="#addEmployeeModal" class="btn btn-success btn-rounded" data-toggle="modal"><i style="font-size: 20px" class="fas fa-plus-circle"></i></a>
             <div class="search-box">
               <div class="input-group">
                 <input type="text" id="search" class="form-control" placeholder="Search by Name">
@@ -47,129 +47,133 @@
           </div>
         </div>
       </div>
-      <table  class="table">
+      <table  class="table" >
         <thead>
         <tr style="color: black; font-size: 20px; background-color: #CACED1">
           <th>#</th>
-          <th scope="col" style="width: 22%;">Name</th>
-          <th scope="col" style="width: 22%;">Address</th>
-          <th scope="col">City</th>
-          <th scope="col">Pin Code</th>
-          <th scope="col">Country</th>
+          <th scope="col">Name</th>
+          <th scope="col">Day Of Birth</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Id Card</th>
+          <th scope="col">Phone Number</th>
+<!--          <th scope="col">Email</th>-->
+          <th scope="col">Address</th>
+          <th scope="col">Customer Type</th>
           <th colspan="2" scope="col" style="text-align: center">Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>1</td>
-          <td>Thomas Hardy</td>
-          <td>89 Chiaroscuro Rd.</td>
-          <td>Portland</td>
-          <td>97219</td>
-          <td>USA</td>
+        <tr *ngFor="let customerObj of customers; index as i">
+          <td>{{i+1}}</td>
+          <td>{{customerObj.name}}</td>
+          <td>{{customerObj.birthDay |date: 'dd-MM-yyyy'}}</td>
+          <td>{{customerObj.gender}}</td>
+          <td>{{customerObj.idCard}}</td>
+          <td>{{customerObj.phoneNumber}}</td>
+<!--          <td>{{customerObj.email}}</td>-->
+          <td>{{customerObj.address}}</td>
+          <td>{{customerObj.customerType.name}}</td>
           <td class="d-flex justify-content-between">
             <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">
-              <!--                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">-->
-              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>
-              <!--                        </a>-->
+              <a [routerLink]="['/customer/edit', customerObj.id]"><i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i></a>
             </button>
           </td>
           <td>
             <!-- Button trigger modal -->
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
+            <button  style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
                     data-mdb-target="#exampleModal">
-              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>
+              <a [routerLink]="['/customer/delete', customerObj.id]"><i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i></a>
             </button>
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Maria Anders</td>
-          <td>Obere Str. 57</td>
-          <td>Berlin</td>
-          <td>12209</td>
-          <td>Germany</td>
-          <td class="d-flex justify-content-between">
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">
-              <!--                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">-->
-              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>
-              <!--                        </a>-->
-            </button>
-            </td>
-          <td>
-            <!-- Button trigger modal -->
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal">
-              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Fran Wilson</td>
-          <td>C/ Araquil, 67</td>
-          <td>Madrid</td>
-          <td>28023</td>
-          <td>Spain</td>
-          <td class="d-flex justify-content-between">
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">
-              <!--                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">-->
-              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>
-              <!--                        </a>-->
-            </button>
-          </td>
-          <td>
-            <!-- Button trigger modal -->
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal">
-              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Dominique Perrier</td>
-          <td>25, rue Lauriston</td>
-          <td>Paris</td>
-          <td>75016</td>
-          <td>France</td>
-          <td class="d-flex justify-content-between">
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">
-              <!--                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">-->
-              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>
-              <!--                        </a>-->
-            </button>
-          </td>
-          <td>
-            <!-- Button trigger modal -->
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal">
-              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Martin Blank</td>
-          <td>Via Monte Bianco 34</td>
-          <td>Turin</td>
-          <td>10100</td>
-          <td>Italy</td>
-          <td class="d-flex justify-content-between">
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">
-              <!--                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">-->
-              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>
-              <!--                        </a>-->
-            </button>
-          </td>
-          <td>
-            <!-- Button trigger modal -->
-            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"
-                    data-mdb-target="#exampleModal">
-              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
+<!--        <tr>-->
+<!--          <td>2</td>-->
+<!--          <td>Maria Anders</td>-->
+<!--          <td>Obere Str. 57</td>-->
+<!--          <td>Berlin</td>-->
+<!--          <td>12209</td>-->
+<!--          <td>Germany</td>-->
+<!--          <td class="d-flex justify-content-between">-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">-->
+<!--              &lt;!&ndash;                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">&ndash;&gt;-->
+<!--              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>-->
+<!--              &lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--            </button>-->
+<!--            </td>-->
+<!--          <td>-->
+<!--            &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"-->
+<!--                    data-mdb-target="#exampleModal">-->
+<!--              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>-->
+<!--            </button>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>3</td>-->
+<!--          <td>Fran Wilson</td>-->
+<!--          <td>C/ Araquil, 67</td>-->
+<!--          <td>Madrid</td>-->
+<!--          <td>28023</td>-->
+<!--          <td>Spain</td>-->
+<!--          <td class="d-flex justify-content-between">-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">-->
+<!--              &lt;!&ndash;                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">&ndash;&gt;-->
+<!--              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>-->
+<!--              &lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--            </button>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"-->
+<!--                    data-mdb-target="#exampleModal">-->
+<!--              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>-->
+<!--            </button>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>4</td>-->
+<!--          <td>Dominique Perrier</td>-->
+<!--          <td>25, rue Lauriston</td>-->
+<!--          <td>Paris</td>-->
+<!--          <td>75016</td>-->
+<!--          <td>France</td>-->
+<!--          <td class="d-flex justify-content-between">-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">-->
+<!--              &lt;!&ndash;                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">&ndash;&gt;-->
+<!--              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>-->
+<!--              &lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--            </button>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"-->
+<!--                    data-mdb-target="#exampleModal">-->
+<!--              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>-->
+<!--            </button>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>5</td>-->
+<!--          <td>Martin Blank</td>-->
+<!--          <td>Via Monte Bianco 34</td>-->
+<!--          <td>Turin</td>-->
+<!--          <td>10100</td>-->
+<!--          <td>Italy</td>-->
+<!--          <td class="d-flex justify-content-between">-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded">-->
+<!--              &lt;!&ndash;                        <a th:href="@{/customer/{id}/view(id=${customerObj.getId()})}">&ndash;&gt;-->
+<!--              <i style="font-size: x-large; color: #10d4ee" class="fas fa-user-edit"></i>-->
+<!--              &lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--            </button>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--            <button style="padding: 0" type="button" class="btn btn-outline-light btn-rounded" data-mdb-toggle="modal"-->
+<!--                    data-mdb-target="#exampleModal">-->
+<!--              <i style="color: red; font-size: x-large" class="fas fa-trash-alt"></i>-->
+<!--            </button>-->
+<!--          </td>-->
+<!--        </tr>-->
         </tbody>
       </table>
     </div>

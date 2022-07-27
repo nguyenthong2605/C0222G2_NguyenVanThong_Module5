@@ -1,0 +1,138 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Nguyễn Văn Thông",
+      "birthDay": "2000-05-26",
+      "gender": "Nam",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "nguyenthong2652000@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 2,
+      "customerType": {
+        "id": 2,
+        "name": "Silver"
+      },
+      "name": "Lê Quang Anh Đà",
+      "birthDay": "1999-06-01",
+      "gender": "Nam",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "anhda@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "name": "Nguyễn Văn Thông",
+      "birthDay": "2000-05-26",
+      "gender": "Nam",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "nguyenthong2652000@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 4,
+      "customerType": {
+        "id": 4,
+        "name": "Gold"
+      },
+      "name": "Nguyễn Văn Thông",
+      "birthDay": "2000-05-26",
+      "gender": "Nam",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "nguyenthong2652000@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 5,
+      "customerType": {
+        "id": 5,
+        "name": "Platinium"
+      },
+      "name": "Hồ Thị Hồng",
+      "birthDay": "1998-05-23",
+      "gender": "Nữ",
+      "idCard": "123321",
+      "phoneNumber": "0123123123",
+      "email": "hong@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "name": "thong",
+      "birthday": null,
+      "gender": "option1",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "thong@gmail.com",
+      "address": "quang nam",
+      "customerType": {
+        "id": 2,
+        "name": "Silver"
+      },
+      "id": 6
+    },
+    {
+      "name": "anh phuong",
+      "birthDay": "2022-07-16",
+      "gender": "option1",
+      "idCard": "123456",
+      "phoneNumber": "0338592181",
+      "email": "nguyenthong2652000@gmail.com",
+      "address": "quang nam",
+      "customerType": {
+        "id": 4,
+        "name": "Gold"
+      },
+      "id": 7
+    },
+    {
+      "name": null,
+      "birthDay": null,
+      "gender": "0",
+      "idCard": null,
+      "phoneNumber": null,
+      "email": null,
+      "address": null,
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 8
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Silver"
+    },
+    {
+      "id": 3,
+      "name": "Member"
+    },
+    {
+      "id": 4,
+      "name": "Gold"
+    },
+    {
+      "id": 5,
+      "name": "Platinium"
+    }
+  ]
+}
