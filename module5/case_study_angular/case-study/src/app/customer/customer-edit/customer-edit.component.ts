@@ -70,4 +70,7 @@ export class CustomerEditComponent implements OnInit {
       console.log(error);
     });
   }
+  compareCustomerType(c1: CustomerType, c2: CustomerType): boolean {
+    return c1.id === c2.id;
+  }
 }

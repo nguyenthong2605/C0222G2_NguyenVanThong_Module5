@@ -1,0 +1,101 @@
+<h2 style="background-color: #7bec4e; text-align: center; margin-top: 10px">PRODUCT-BLOCK LIST</h2>
+<div style="margin-left: 40px; margin-bottom: 20px">
+  <a routerLink="/productBlock/create" >
+    <svg style="height: 40px; width: 40px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill"
+         viewBox="0 0 16 16">
+      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      <path fill-rule="evenodd"
+            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+    </svg>
+  </a>
+</div>
+<table class="table table-success table-striped">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th scope="col">Mã lô hàng</th>
+    <th scope="col">Tên sản phẩm</th>
+    <th scope="col">Giá tiền</th>
+    <th scope="col">Đơn vị</th>
+    <th scope="col">Số lượng</th>
+    <th scope="col">Ngày nhập hàng</th>
+    <th scope="col">Ngày sản xuất</th>
+    <th scope="col">Ngày hết hạn</th>
+    <th colspan="2" scope="col" style="text-align: center">Action</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  <tr *ngFor="let productBlockObj of productBlock; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{productBlockObj.idProductBlock}}</td>
+    <td>{{productBlockObj.product.name}}</td>
+    <td>{{productBlockObj.product.price}}</td>
+    <td>{{productBlockObj.product.unit}}</td>
+    <td>{{productBlockObj.quantity}}</td>
+    <td>{{productBlockObj.dayAdd |date: 'dd-MM-yyyy'}}</td>
+    <td>{{productBlockObj.dateOfManufacture |date: 'dd-MM-yyyy'}}</td>
+    <td>{{productBlockObj.dateExpiration |date: 'dd-MM-yyyy'}}</td>
+    <td>
+      <button type="button" class="btn btn-light"><a style="text-decoration: none">Edit</a></button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-light" data-bs-toggle="modal"
+              [attr.data-bs-target] ="'#exampleModal' + productBlockObj.id">
+        Delete
+      </button>
+    </td>
+
+<!--     Modal-->
+    <div class="modal fade" id="exampleModal{{productBlockObj.id}}" tabindex="-1" aria-labelledby='exampleModalLabel'
+         aria-hidden="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4>Bạn có chắc chắn muốn xóa thông tin lô hàng!</h4> <br>
+            <p>
+              ID:
+              <span>{{productBlockObj.id}}</span>
+            </p>
+            <p>
+              Name:
+              <span>{{productBlockObj.product.name}}</span>
+            </p>
+            <p style="color: red">Lưu ý: Xóa rồi không thể hoàn tác!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button (click)="deleteProductBlock(productBlockObj.id)" data-bs-dismiss="modal" type="button"
+                    class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </tr>
+  </tbody>
+</table>
+
+<nav class="blog-pagination d-flex justify-content-center py-3">
+  <ul class="pagination">
+    <li class="page-item px-1">
+      <a  class="page-link" (click)="previousPage()">Previous</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link">
+        <span>{{pageNumber + 1}}</span>
+        <span>/</span>
+        <span>{{totalPages}}</span>
+      </a>
+    </li>
+    <li class="page-item px-1">
+      <a class="page-link" (click)="nextPage()">Next</a>
+    </li>
+  </ul>
+</nav>
+<!--<div style="margin-left: 1200px">-->
+<!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--</div>-->
+

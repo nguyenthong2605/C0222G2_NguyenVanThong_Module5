@@ -1,0 +1,25 @@
+npx kill-port 3000
+
+json-server --watch db.json
+npm install -g json-server
+
+npm i ngx-pagination@5.1.1
+
+
+npm i ngx-toastr@12.1.0
+	  
+  "styles": [
+        "node_modules/ngx-toastr/toastr.css",
+        "src/styles.css"
+            ],
+			
+			
+		constructor(private supplierService: SupplierService,
+              private toastr : ToastrService) {
+                                                 }
+		
+		this.supplierForm.reset(); // có thêm nhiều
+        this.toastr.success("Thêm Mới Thành Công !", "", {
+          timeOut:3000,
+          progressBar: true
+        }

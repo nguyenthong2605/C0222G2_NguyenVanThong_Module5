@@ -1,0 +1,62 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Bùi Tấn Phúc Hậu",
+      "gender": "Other",
+      "email": "phuchau@gmail.com",
+      "birthDay": "2000-04-21",
+      "class": {
+        "id": 1,
+        "name": "C1221G1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn Thông",
+      "gender": "Other",
+      "email": "thong@gmail.com",
+      "birthDay": "2000-05-26",
+      "class": {
+        "id": 2,
+        "name": "C0222G1"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Bùi Tấn Phúc Hậu",
+      "gender": "Other",
+      "email": "phuchau@gmail.com",
+      "birthDay": "2000-04-21",
+      "class": {
+        "id": 3,
+        "name": "C0222G2"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bùi Tấn Phúc Hậu",
+      "gender": "Other",
+      "email": "phuchau@gmail.com",
+      "birthDay": "2000-04-21",
+      "class": {
+        "id": 1,
+        "name": "C1221G1"
+      }
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "name": "C1221G1"
+    },
+    {
+      "id": 2,
+      "name": "C0222G1"
+    },
+    {
+      "id": 3,
+      "name": "C0222G2"
+    }
+  ]
+}

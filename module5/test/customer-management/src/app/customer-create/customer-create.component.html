@@ -1,0 +1,261 @@
+<div class="container row col-lg-12" style="padding: 50px 10px 50px 200px">
+  <div class=" col-lg-4 order-md-last">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-primary">Your cart</span>
+      <span class="badge bg-primary rounded-pill">3</span>
+    </h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0">Product name</h6>
+          <small class="text-muted">Brief description</small>
+        </div>
+        <span class="text-muted">$12</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0">Second product</h6>
+          <small class="text-muted">Brief description</small>
+        </div>
+        <span class="text-muted">$8</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0">Third item</h6>
+          <small class="text-muted">Brief description</small>
+        </div>
+        <span class="text-muted">$5</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between bg-light">
+        <div class="text-success">
+          <h6 class="my-0">Promo code</h6>
+          <small>EXAMPLECODE</small>
+        </div>
+        <span class="text-success">−$5</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Total (USD)</span>
+        <strong>$20</strong>
+      </li>
+    </ul>
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Promo code">
+      <button type="submit" class="btn btn-secondary">Redeem</button>
+    </div>
+  </div>
+
+  <div class=" col-lg-8">
+    <h4 class="mb-3">ADD CUSTOMER</h4>
+
+    <form [formGroup]="customerForm" (ngSubmit)="submit()" class="needs-validation" novalidate="">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Name</label>
+          <input formControlName="name" name="name" type="text" class="form-control" id="name">
+          <p style="color: red"
+             *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched">
+            Name can't be left blank.
+          </p>
+          <p style="color: red"
+             *ngIf="customerForm.controls.name.hasError('pattern') && customerForm.controls.name.touched">
+            Invalid format.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <label for="birthDay" class="form-label">Date of birth:</label>
+          <input formControlName="birthDay" name="birthDay" type="date" class="form-control" id="birthDay">
+          <p style="color: red"
+             *ngIf="customerForm.controls.birthDay.hasError('required') && customerForm.controls.birthDay.touched">
+            Date of birth can't be left blank.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Gender</label>
+          <select formControlName="gender" name="gender" class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <p style="color: red"
+             *ngIf="customerForm.controls.gender.hasError('required') && customerForm.controls.gender.touched">
+            Gender can't be left blank.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <label for="state" class="form-label">Customer Type</label>
+          <select formControlName="customerType" name="customerType" class="form-select" id="state" required="">
+            <option value="" disabled selected="selected">Please choose customer type.</option>
+            <option *ngFor="let customerTypeObj of customerType"
+                    [ngValue]="customerTypeObj">{{customerTypeObj.name}}</option>
+          </select>
+          <p style="color: red"
+             *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched">
+            Customer type can't be left blank.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <label for="idCard" class="form-label">Id Card</label>
+          <input formControlName="idCard" name="idCard" type="text" class="form-control" id="idCard">
+          <p style="color: red"
+             *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.touched">
+            Card id can't be left blank.
+          </p>
+          <p style="color: red"
+             *ngIf="customerForm.controls.idCard.hasError('pattern') && customerForm.controls.idCard.touched">
+            Invalid format.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input formControlName="phoneNumber" name="phoneNumber" type="text" class="form-control" id="phoneNumber">
+          <p style="color: red"
+             *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.touched">
+            Phone number can't be left blank.
+          </p>
+          <p style="color: red"
+             *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.touched">
+            Invalid format.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <label for="email" class="form-label">Email</label>
+          <input formControlName="email" name="email" type="text" class="form-control" id="email">
+          <p style="color: red"
+             *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched">
+            Phone number can't be left blank.
+          </p>
+          <p style="color: red"
+             *ngIf="customerForm.controls.email.hasError('pattern') && customerForm.controls.email.touched">
+            Invalid format.
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <label for="address" class="form-label">Address</label>
+          <input formControlName="address" name="address" type="text" class="form-control" id="address">
+          <p style="color: red"
+             *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.touched">
+            Address can't be left blank.
+          </p>
+        </div>
+        <hr class="my-4">
+        <button type="submit" class="w-40 btn btn-primary col-sm-5" >Submit</button>
+        <p class="col-sm-1"></p>
+        <button type="button" class="w-40 btn btn-secondary col-sm-5"><a style="text-decoration: none; color: white" routerLink="/customer/list">Back To List</a></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--<main id="main">-->
+<!--  <div class="container">-->
+<!--    <section id="hero-slider" class="hero-slider">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          <div class="col-12">-->
+<!--            <form [formGroup]="customerForm" (ngSubmit)="submit()">-->
+<!--              <fieldset>-->
+<!--                <legend>Add Customer:</legend>-->
+<!--                <input formControlName="name" name="name" type="text" class="feedback-input" placeholder="Name"/>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched">-->
+<!--                  Name can't be left blank.-->
+<!--                </p>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.name.hasError('pattern') && customerForm.controls.name.touched">-->
+<!--                  Invalid format.-->
+<!--                </p>-->
+
+<!--                &lt;!&ndash;                <label for="dateOfBirth" >Date of birth:</label><br>&ndash;&gt;-->
+<!--                <input formControlName="birthDay" id="dateOfBirth" name="birthDay" type="date" class="feedback-input"-->
+<!--                       placeholder="Date of Birth"/>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.birthDay.hasError('required') && customerForm.controls.birthDay.touched">-->
+<!--                  Date of birth can't be left blank.-->
+<!--                </p>-->
+
+<!--                <select formControlName="gender" name="gender">-->
+<!--                  <option selected value="">Please choose gender.</option>-->
+<!--                  <option value="Male">Male</option>-->
+<!--                  <option value="Female">Female</option>-->
+<!--                  <option value="Other">Other</option>-->
+<!--                </select>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.gender.hasError('required') && customerForm.controls.gender.touched">-->
+<!--                  Gender can't be left blank.-->
+<!--                </p>-->
+
+<!--                <input formControlName="cardId" name="idCard" type="text" class="feedback-input" placeholder="Id card"/>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.cardId.hasError('required') && customerForm.controls.cardId.touched">-->
+<!--                  Card id can't be left blank.-->
+<!--                </p>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.cardId.hasError('pattern') && customerForm.controls.cardId.touched">-->
+<!--                  Invalid format.-->
+<!--                </p>-->
+
+<!--                <input formControlName="phoneNumber" name="phoneNumber" type="text" class="feedback-input"-->
+<!--                       placeholder="Phone number"/>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.phoneNumber.hasError('required') && customerForm.controls.phoneNumber.touched">-->
+<!--                  Phone number can't be left blank.-->
+<!--                </p>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.touched">-->
+<!--                  Invalid format.-->
+<!--                </p>-->
+
+<!--                <input formControlName="email" name="email" type="text" class="feedback-input" placeholder="Email"/>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched">-->
+<!--                  Phone number can't be left blank.-->
+<!--                </p>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.email.hasError('pattern') && customerForm.controls.email.touched">-->
+<!--                  Invalid format.-->
+<!--                </p>-->
+
+<!--                <select formControlName="customerType" name="customerType">-->
+<!--                  <option value="" disabled selected="selected">Please choose customer type.</option>-->
+<!--                  <option *ngFor="let customerTypeObj of customerType"-->
+<!--                          [ngValue]="customerTypeObj">{{customerTypeObj.name}}</option>-->
+<!--                </select>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched">-->
+<!--                  Customer type can't be left blank.-->
+<!--                </p>-->
+
+<!--                <textarea formControlName="address" name="address" class="feedback-input"-->
+<!--                          placeholder="Address"></textarea>-->
+<!--                <p style="color: red"-->
+<!--                   *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.touched">-->
+<!--                  Address can't be left blank.-->
+<!--                </p>-->
+<!--                <input type="submit" value="SUBMIT"/>-->
+<!--                <button type="button" class="btn btn-light"><a routerLink="/customer/list">Back To List</a></button>-->
+<!--              </fieldset>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--  </div>-->
+<!--</main>-->
+
+<!--<form [formGroup]="customerForm" (ngSubmit)="submit()">-->
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputEmail1" class="form-label">Name</label>-->
+<!--    <input formControlName="name" name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+<!--    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputPassword1" class="form-label">Password</label>-->
+<!--    <input type="password" class="form-control" id="exampleInputPassword1">-->
+<!--  </div>-->
+<!--  <div class="mb-3 form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</form>-->

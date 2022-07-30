@@ -1,0 +1,79 @@
+<h2 style="background-color: #7bec4e; text-align: center; margin-top: 10px">STUDENT LIST</h2>
+<div style="margin-left: 40px; margin-bottom: 20px">
+  <a routerLink="/customer/create" >
+    <svg style="height: 40px; width: 40px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill"
+         viewBox="0 0 16 16">
+      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      <path fill-rule="evenodd"
+            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+    </svg>
+  </a>
+</div>
+<table class="table table-success table-striped">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Email</th>
+    <th scope="col">Birth Day</th>
+    <th scope="col">Class</th>
+    <th colspan="2" scope="col" style="text-align: center">Action</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  <tr *ngFor="let studentObj of student | paginate: { itemsPerPage: 4, currentPage: p }; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{studentObj.name}}</td>
+    <td>{{studentObj.gender}}</td>
+    <td>{{studentObj.email}}</td>
+    <td>{{studentObj.birthDay}}</td>
+    <td>{{studentObj.class.name}}</td>
+    <td>
+<!--      <button type="button" class="btn btn-light"><a style="text-decoration: none" [routerLink]="['/customer/edit', studentObj.id]">Edit</a></button>-->
+    </td>
+    <td>
+      <!--      <button (click)="deleteCustomer(customerObj.id)" type="button" class="btn btn-light">Delete</button>-->
+      <!-- Button trigger modal -->
+<!--      <button type="button" class="btn btn-light" data-bs-toggle="modal"-->
+<!--              [attr.data-bs-target] ="'#exampleModal' + studentObj.id">-->
+<!--        Delete-->
+<!--      </button>-->
+    </td>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal{{studentObj.id}}" tabindex="-1" aria-labelledby='exampleModalLabel'
+         aria-hidden="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4>Bạn có chắc chắn muốn xóa!</h4> <br>
+            <p>
+              ID:
+              <span>{{studentObj.id}}</span>
+            </p>
+            <p>
+              Name:
+              <span>{{studentObj.name}}</span>
+            </p>
+            <p style="color: red">Lưu ý: Xóa rồi không thể hoàn tác!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<!--            <button (click)="deleteCustomer(customerObj.id)" data-bs-dismiss="modal" type="button"-->
+<!--                    class="btn btn-primary">Save changes</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </tr>
+  </tbody>
+</table>
+<div style="margin-left: 1200px">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+

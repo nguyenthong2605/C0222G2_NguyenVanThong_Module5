@@ -26,7 +26,7 @@ export class CustomerService {
 
   saveCustomer(customer: Customer) {
     return this.httpClient.post(this.URL_CUSTOMER, customer);
-  }u
+  }
 
   findByIdCustomer(id: number) {
     return this.httpClient.get(this.URL_CUSTOMER + '/' + id);

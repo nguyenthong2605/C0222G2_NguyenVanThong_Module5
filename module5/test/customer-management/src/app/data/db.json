@@ -1,138 +1,192 @@
 {
-  "customer": [
+  "product-block": [
     {
       "id": 1,
-      "customerType": {
+      "idProductBlock": "LH-0001",
+      "product": {
         "id": 1,
-        "name": "Diamond"
+        "name": "String",
+        "origin": "VN",
+        "price": 250000,
+        "unit": "Thùng"
       },
-      "name": "Nguyễn Văn Thông",
-      "birthDay": "2000-05-26",
-      "gender": "Nam",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "nguyenthong2652000@gmail.com",
-      "address": "Quảng Nam"
+      "quantity": 5,
+      "dayAdd": "2020-12-28",
+      "dateOfManufacture": "2020-09-12",
+      "dateExpiration": "2021-09-12"
     },
     {
       "id": 2,
-      "customerType": {
+      "idProductBlock": "LH-0001",
+      "product": {
         "id": 2,
-        "name": "Silver"
+        "name": "Tiger",
+        "origin": "VN",
+        "price": 220000,
+        "unit": "Thùng"
       },
-      "name": "Lê Quang Anh Đà",
-      "birthDay": "1999-06-01",
-      "gender": "Nam",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "anhda@gmail.com",
-      "address": "Quảng Nam"
+      "quantity": 5,
+      "dayAdd": "2020-12-28",
+      "dateOfManufacture": "2020-09-12",
+      "dateExpiration": "2021-09-12"
     },
     {
       "id": 3,
-      "customerType": {
+      "idProductBlock": "LH-0001",
+      "product": {
         "id": 3,
-        "name": "Member"
+        "name": "Oshi",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
       },
-      "name": "Nguyễn Văn Thông",
-      "birthDay": "2000-05-26",
-      "gender": "Nam",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "nguyenthong2652000@gmail.com",
-      "address": "Quảng Nam"
+      "quantity": 5,
+      "dayAdd": "2020-12-28",
+      "dateOfManufacture": "2020-09-12",
+      "dateExpiration": "2021-09-12"
     },
     {
-      "id": 4,
-      "customerType": {
-        "id": 4,
-        "name": "Gold"
+      "idProductBlock": "LH-0005",
+      "product": {
+        "id": 3,
+        "name": "Oshi",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
       },
-      "name": "Nguyễn Văn Thông",
-      "birthDay": "2000-05-26",
-      "gender": "Nam",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "nguyenthong2652000@gmail.com",
-      "address": "Quảng Nam"
+      "quantity": "24",
+      "dayAdd": "2022-07-08",
+      "dateOfManufacture": "2022-07-01",
+      "dateExpiration": "2022-07-02",
+      "id": 4
     },
     {
-      "id": 5,
-      "customerType": {
-        "id": 5,
-        "name": "Platinium"
+      "idProductBlock": "LH-0004",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
       },
-      "name": "Hồ Thị Hồng",
-      "birthDay": "1998-05-23",
-      "gender": "Nữ",
-      "idCard": "123321",
-      "phoneNumber": "0123123123",
-      "email": "hong@gmail.com",
-      "address": "Quảng Nam"
+      "quantity": "12",
+      "dayAdd": "2022-07-15",
+      "dateOfManufacture": "2022-07-16",
+      "dateExpiration": "2022-07-03",
+      "id": 5
     },
     {
-      "name": "thong",
-      "birthday": null,
-      "gender": "option1",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "thong@gmail.com",
-      "address": "quang nam",
-      "customerType": {
-        "id": 2,
-        "name": "Silver"
+      "idProductBlock": "LH-0004",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
       },
+      "quantity": "12",
+      "dayAdd": "2022-07-08",
+      "dateOfManufacture": "2022-07-07",
+      "dateExpiration": "2022-07-09",
       "id": 6
     },
     {
-      "name": "anh phuong",
-      "birthDay": "2022-07-16",
-      "gender": "option1",
-      "idCard": "123456",
-      "phoneNumber": "0338592181",
-      "email": "nguyenthong2652000@gmail.com",
-      "address": "quang nam",
-      "customerType": {
-        "id": 4,
-        "name": "Gold"
+      "idProductBlock": "LH-0202",
+      "product": {
+        "id": 2,
+        "name": "Tiger",
+        "origin": "VN",
+        "price": 220000,
+        "unit": "Thùng"
       },
+      "quantity": "24",
+      "dayAdd": "2022-07-16",
+      "dateOfManufacture": "2022-07-16",
+      "dateExpiration": "2022-07-16",
       "id": 7
     },
     {
-      "name": null,
-      "birthDay": null,
-      "gender": "0",
-      "idCard": null,
-      "phoneNumber": null,
-      "email": null,
-      "address": null,
-      "customerType": {
-        "id": 1,
-        "name": "Diamond"
+      "idProductBlock": "LH-1231",
+      "product": {
+        "id": 2,
+        "name": "Tiger",
+        "origin": "VN",
+        "price": 220000,
+        "unit": "Thùng"
       },
+      "quantity": "5555",
+      "dayAdd": "2022-07-23",
+      "dateOfManufacture": "2022-05-18",
+      "dateExpiration": "2022-07-13",
       "id": 8
+    },
+    {
+      "idProductBlock": "LH-0004",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
+      },
+      "quantity": "33",
+      "dayAdd": "2022-07-23",
+      "dateOfManufacture": "2022-07-03",
+      "dateExpiration": "2022-07-10",
+      "id": 9
+    },
+    {
+      "idProductBlock": "LH-0005",
+      "product": {
+        "id": 3,
+        "name": "Oshi",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
+      },
+      "quantity": "12",
+      "dayAdd": "2022-07-23",
+      "dateOfManufacture": "2022-07-01",
+      "dateExpiration": "2022-07-03",
+      "id": 10
+    },
+    {
+      "idProductBlock": "LH-4444",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "origin": "VN",
+        "price": 100000,
+        "unit": "Thùng"
+      },
+      "quantity": "5",
+      "dayAdd": "2022-07-09",
+      "dateOfManufacture": "2022-07-09",
+      "dateExpiration": "2022-07-15",
+      "id": 12
     }
   ],
-  "customerType": [
+  "product": [
     {
       "id": 1,
-      "name": "Diamond"
+      "name": "Sting",
+      "origin": "VN",
+      "price": 100000,
+      "unit": "Thùng"
     },
     {
       "id": 2,
-      "name": "Silver"
+      "name": "Tiger",
+      "origin": "VN",
+      "price": 220000,
+      "unit": "Thùng"
     },
     {
       "id": 3,
-      "name": "Member"
-    },
-    {
-      "id": 4,
-      "name": "Gold"
-    },
-    {
-      "id": 5,
-      "name": "Platinium"
+      "name": "Oshi",
+      "origin": "VN",
+      "price": 100000,
+      "unit": "Thùng"
     }
   ]
 }
